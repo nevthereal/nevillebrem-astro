@@ -1,14 +1,19 @@
 ---
-
+import { Button } from "@components/Home";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body> </body>
-</html>
+<BaseLayout title='Home'>
+  <section class='w-screen h-screen flex justify-center items-center'>
+    <div class='flex flex-col'>
+      <h1 class='mx-auto text-7xl font-black md:text-8xl'>Neville Brem</h1>
+      <h3 class='mx-auto pt-4 font-semibold italic text-xl md:text-2xl'>
+        Bringing <span
+          class='font-extrabold text-primary duration-200 ease-in-out hover:tracking-widest hover:text-green-500'
+          >life</span
+        > to every page
+      </h3>
+      <Button client:load />
+    </div>
+  </section>
+</BaseLayout>
