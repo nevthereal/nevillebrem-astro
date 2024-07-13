@@ -6,7 +6,6 @@ export const Button = () => {
       initial={{ scale: 0.25, rotate: 180 }}
       animate={{ scale: 1, rotate: 0 }}
       transition={{
-        type: "spring",
         stiffness: 260,
         damping: 20,
       }}

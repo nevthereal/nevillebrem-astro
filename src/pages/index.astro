@@ -1,6 +1,10 @@
 ---
-import { Button } from "@components/Button";
+import { Button } from "@components/Home";
+import meRaw from "@assets/me.jpg";
+import { getImage } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
+
+const me = await getImage({ src: meRaw });
 ---
 
 <BaseLayout title='Home'>

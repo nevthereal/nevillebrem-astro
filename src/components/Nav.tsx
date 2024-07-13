@@ -1,38 +1,51 @@
-import { House, Briefcase, BookUser } from "lucide-react";
+import { House, Briefcase, BookCheck, MailOpen, Icon } from "lucide-react";
+import type { ReactNode } from "react";
 
 export const Nav = () => {
+  interface Item {
+    title: string;
+    link: string;
+    icon: ReactNode;
+  }
+
+  const links: Item[] = [
+    {
+      title: "Home",
+      link: "/",
+      icon: <House />,
+    },
+    {
+      title: "Work",
+      link: "/work",
+      icon: <Briefcase />,
+    },
+    {
+      title: "Blog",
+      link: "/blog",
+      icon: <BookCheck />,
+    },
+    {
+      title: "Contact",
+      link: "/contact",
+      icon: <MailOpen />,
+    },
+  ];
   return (
     <ul className='menu bg-base-200 rounded-box fixed left-6 top-1/2 hidden -translate-y-1/2 md:block'>
-      <li>
-        <a
-          aria-label='Home'
-          href='/'
-          className='tooltip tooltip-right aspect-square flex justify-center items-center'
-          data-tip='Home'
-        >
-          <House strokeWidth={2} size={24} />
-        </a>
-      </li>
-      <li>
-        <a
-          aria-label='Work'
-          href='/work'
-          className='tooltip tooltip-right aspect-square flex justify-center items-center'
-          data-tip='Work'
-        >
-          <Briefcase strokeWidth={2} size={24} />
-        </a>
-      </li>
-      <li>
-        <a
-          aria-label='Contact'
-          href='/contact'
-          className='tooltip tooltip-right aspect-square flex justify-center items-center'
-          data-tip='Contact'
-        >
-          <BookUser strokeWidth={2} size={24} />
-        </a>
-      </li>
+      {links.map(({ title, link, icon }) => {
+        return (
+          <li key={title}>
+            <a
+              aria-label={title}
+              href={link}
+              className='tooltip tooltip-right aspect-square flex justify-center items-center'
+              data-tip={title}
+            >
+              <span>{icon}</span>
+            </a>
+          </li>
+        );
+      })}
     </ul>
   );
 };
