@@ -1,4 +1,5 @@
-import { House, Briefcase, BookCheck, MailOpen, Icon } from "lucide-react";
+import { motion } from "framer-motion";
+import { House, Briefcase, BookCheck, MailOpen } from "lucide-react";
 import type { ReactNode } from "react";
 
 export const Nav = () => {
@@ -30,8 +31,17 @@ export const Nav = () => {
       icon: <MailOpen />,
     },
   ];
+
   return (
-    <ul className='menu bg-base-200 rounded-box fixed left-6 top-1/2 hidden -translate-y-1/2 md:block'>
+    <motion.ul
+      initial={{ translateX: -36, translateY: "-50%" }}
+      whileHover={{ translateX: 24 }}
+      transition={{
+        ease: "easeOut",
+        duration: 0.2,
+      }}
+      className='menu bg-base-200 border-base-300 border rounded-box fixed top-1/2 hidden md:block'
+    >
       {links.map(({ title, link, icon }) => {
         return (
           <li key={title}>
@@ -46,6 +56,6 @@ export const Nav = () => {
           </li>
         );
       })}
-    </ul>
+    </motion.ul>
   );
 };
