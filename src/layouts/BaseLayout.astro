@@ -19,6 +19,15 @@ const { title } = Astro.props;
       src='https://kit.fontawesome.com/0c1fb969e1.js'
       crossorigin='anonymous'></script>
     <title>Neville Brem - {title}</title>
+    <meta property='og:title' content={`Neville Brem - ${title}`} />
+    <meta property='og:image' content='banner.png' />
+    <meta property='og:description' content='Homepage of Neville Brem' />
+    <meta property='og:url' content='https://www.nevillebrem.com' />
+    <meta property='twitter:description' content='Homepage of Neville Brem' />
+    <meta property='twitter:title' content={`Neville Brem - ${title}`} />
+    <meta property='twitter:image' content='banner.png' />
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:site' content='@BremNeville' />
     <style is:global>
       .bento-box {
         @apply p-8 text-center duration-200 hover:shadow-lg rounded-box bg-base-200;
