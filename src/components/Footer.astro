@@ -1,7 +1,7 @@
 <footer
-  class='mx-auto p-8 text-center md:w-[50%] flex flex-col md:flex-row-reverse gap-4 justify-between'
+  class='mx-auto p-8 text-center max-w-xl flex flex-col md:flex-row-reverse gap-4 justify-between'
 >
-  <div class='mt-4 grid grid-cols-2 justify-items-center text-left'>
+  <div class='mt-4 grid grid-cols-2 justify-center text-left'>
     <ul>
       <li class='text-base-content/80 font-bold'>Useful links</li>
       <li>
@@ -32,6 +32,13 @@
         <a
           class='font-medium'
           target='_blank'
+          href='https://youtube.com/@nevillebrem'>YouTube</a
+        >
+      </li>
+      <li>
+        <a
+          class='font-medium'
+          target='_blank'
           href='https://github.com/sponsors/nevthereal'>GitHub Sponsoring</a
         >
       </li>
@@ -46,15 +53,24 @@
   </div>
   <div>
     <h1 class='my-4 font-bold text-lg'>© Neville Brem 2024</h1>
-    <div class='flex justify-center gap-8 text-2xl'>
-      <a href='https://github.com/nevthereal' target='_blank'
-        ><i class='fa-brands fa-github'></i></a
+    <div class='flex justify-center'>
+      <a
+        class='btn btn-square btn-ghost'
+        aria-label='GitHub'
+        href='https://github.com/nevthereal'
+        target='_blank'><i class='fa-brands fa-github text-2xl'></i></a
       >
-      <a href='https://twitter.com/bremneville' target='_blank'
-        ><i class='fa-brands fa-x-twitter'></i></a
+      <a
+        class='btn btn-square btn-ghost'
+        aria-label='X (Twitter)'
+        href='https://twitter.com/bremneville'
+        target='_blank'><i class='fa-brands fa-x-twitter text-2xl'></i></a
       >
-      <a href='mailto:contact@nevillebrem.com'
-        ><i class='fa-solid fa-envelope'></i></a
+      <a
+        class='btn btn-square btn-ghost'
+        aria-label='Mail'
+        href='mailto:contact@nevillebrem.com'
+        ><i class='fa-solid fa-envelope text-2xl'></i></a
       >
     </div>
   </div>

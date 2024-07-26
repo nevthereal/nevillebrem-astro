@@ -1,0 +1,14 @@
+{
+  "name": "Codoodle",
+  "desc": "A 'social media app' built with SvelteKit and some other modern technologies. This project taught me a lot of backend concepts like auth and databases.",
+  "tech": [
+    "SvelteKit",
+    "Skeleton UI",
+    "TailwindCSS",
+    "Drizzle ORM",
+    "Turso",
+    "Lucia auth"
+  ],
+  "link": "https://codoodle.nevillebrem.com",
+  "ghLink": "https://github.com/nevthereal/codoodle"
+}

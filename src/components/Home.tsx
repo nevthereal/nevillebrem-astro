@@ -19,7 +19,7 @@ export function InfoBento() {
   return (
     <section
       id='information'
-      className='grid-row-3 md:mx-auto flex grid-cols-3 flex-col gap-8 py-8 md:grid max-w-7xl mx-4'
+      className='grid-row-3 md:mx-auto flex grid-cols-3 flex-col gap-8 py-8 md:grid max-w-7xl mx-8'
     >
       <motion.div
         initial={{ translateX: -100, opacity: 0 }}

@@ -18,6 +18,9 @@ export default {
           accent: "#F1D302",
           neutral: "#A0A0A0",
           "base-100": "#1e1e1e",
+          warning: "#FFA500",
+          success: "#28A745",
+          error: "#DC3545",
 
           "--rounded-box": "0.5rem", // border radius rounded-box utility class, used in card and other large boxes
           "--rounded-btn": "0.25rem", // border radius rounded-btn utility class, used in buttons and similar element
@@ -27,7 +30,7 @@ export default {
           "--btn-focus-scale": "0.95", // scale transform of button when you focus on it
           "--border-btn": "2px", // border width of buttons
           "--tab-border": "2px", // border width of tabs
-          "--tab-radius": "0.5rem", // border radius of tabs
+          "--tab-radius": "0.5rem", // border radius of tabs.
         },
       },
     ],

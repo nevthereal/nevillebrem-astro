@@ -1,0 +1,35 @@
+---
+import Heading from "@components/Heading.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const socials = await getCollection("socials");
+---
+
+<BaseLayout title='Contact'>
+  <Heading title='Contact' subtitle='Where to find me' />
+
+  <div class='my-8 max-w-5xl md:mx-auto mx-8'>
+    <h2 class='h2 mb-4 font-bold'>Check out my socials</h2>
+    <div class='grid grid-rows-3 gap-4 xl:grid-cols-3 xl:grid-rows-1'>
+      {
+        socials.map((social) => {
+          return (
+            <a
+              href={social.data.link}
+              target='_blank'
+              class='bg-base-200 rounded-box flex items-center gap-6 p-4'
+              id='card'
+            >
+              <i class={`${social.data.icon} text-2xl`} />
+              <div class='my-auto'>
+                <h3 class='text-3xl font-bold'>{social.data.title}</h3>
+                <p class='hidden md:block font-medium'>{social.data.body}</p>
+              </div>
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</BaseLayout>
