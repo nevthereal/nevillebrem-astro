@@ -18,8 +18,9 @@ const projects = await getCollection("work");
   >
     {
       projects.map((project) => {
+        console.log(project);
         return (
-          <div class='bg-base-200 rounded-box flex flex-col justify-between p-8 text-left border border-base-content/50'>
+          <div class='bg-base-200 rounded-box flex flex-col justify-between p-8 text-left'>
             <div>
               <h1 class='font-bold text-3xl'>{project.data.name}</h1>
               <hr class='my-4 border-t border-t-base-content/50' />
@@ -29,7 +30,7 @@ const projects = await getCollection("work");
               <p class='font-bold text-xl'>Technologies</p>
               <ul class='disc-list'>
                 {project.data.tech.map((tech) => {
-                  <li>{tech}</li>;
+                  return <li>{tech}</li>;
                 })}
               </ul>
               <hr class='my-4 border-t border-t-base-content/50' />

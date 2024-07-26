@@ -3,6 +3,7 @@ import { Button, InfoBento } from "@components/Home";
 import me from "@assets/me.jpg";
 import { Image } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Heading from "@components/Heading.astro";
 ---
 
 <BaseLayout title='Home'>
@@ -48,8 +49,9 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   </section>
   <InfoBento client:visible />
   <section id='timeline' class='max-w-5xl md:mx-auto mx-8 prose-a:link'>
+    <Heading title='My timeline' subtitle='A little bit of history' />
     <ul
-      class='timeline timeline-snap-icon max-md:timeline-compact timeline-vertical'
+      class='timeline timeline-snap-icon max-md:timeline-compact timeline-vertical mb-16'
     >
       <li>
         <div class='timeline-middle'>
