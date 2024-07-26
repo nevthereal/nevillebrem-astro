@@ -1,34 +1,32 @@
 import { motion } from "framer-motion";
-import { House, Briefcase, BookCheck, MailOpen } from "lucide-react";
-import type { ReactNode } from "react";
 
 export const Nav = () => {
   interface Item {
     title: string;
     link: string;
-    icon: ReactNode;
+    icon: string;
   }
 
   const links: Item[] = [
     {
       title: "Home",
       link: "/",
-      icon: <House />,
+      icon: "fa-solid fa-house",
     },
     {
       title: "Work",
       link: "/work",
-      icon: <Briefcase />,
+      icon: "fa-solid fa-suitcase",
     },
     {
       title: "Blog",
       link: "/blog",
-      icon: <BookCheck />,
+      icon: "fa-solid fa-book-bookmark",
     },
     {
       title: "Contact",
       link: "/contact",
-      icon: <MailOpen />,
+      icon: "fa-solid fa-envelope",
     },
   ];
 
@@ -51,7 +49,7 @@ export const Nav = () => {
               className='tooltip tooltip-right aspect-square flex justify-center items-center'
               data-tip={title}
             >
-              <span>{icon}</span>
+              <i className={`${icon} text-xl`}></i>
             </a>
           </li>
         );
