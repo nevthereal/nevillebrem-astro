@@ -3,7 +3,67 @@ import Heading from "@components/Heading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-const projects = await getCollection("work");
+interface Project {
+  name: string;
+  desc: string;
+  link: string | null;
+  ghLink: string | null;
+  tech: string[];
+}
+
+const projects: Project[] = [
+  {
+    name: "Zenith",
+    desc: "An App that converts natural language input into usable events or tasks. I intended to work against using complex UIs.",
+    tech: [
+      "SvelteKit",
+      "TailwindCSS & daisyUI",
+      "Vercel AI SDK",
+      "Drizzle ORM",
+      "Neon",
+      "Lucia auth",
+      "Stripe",
+      "Upstash Rate Limiter",
+    ],
+    link: "https://zenithproductivity.app",
+    ghLink: "https://github.com/nevthereal/zenith",
+  },
+  {
+    name: "Codoodle",
+    desc: 'A "social media app" built with SvelteKit and some other modern technologies. This project taught me a lot of backend concepts like auth and databases.',
+    tech: [
+      "SvelteKit",
+      "Skeleton UI",
+      "TailwindCSS",
+      "Drizzle ORM",
+      "Turso",
+      "Lucia auth",
+    ],
+    link: "https://codoodle.nevillebrem.com",
+    ghLink: "https://github.com/nevthereal/codoodle",
+  },
+  {
+    name: "Wolffe Bricks",
+    desc: "An ecommerce app I built for me and a friend to sell PDF toy instructions.",
+    tech: ["SvelteKit", "Skeleton UI", "TailwindCSS", "Stripe"],
+    link: "https://wolffebricks.store",
+    ghLink: "https://github.com/nevthereal/wolffebricks-svelte",
+  },
+  {
+    name: "Lapland Course Event Page",
+    desc: "Landing page for an event of the finnish Association of Spinal Surgeons.",
+    tech: ["Astro", "TailwindCSS", "React"],
+    link: "https://lapin-kurssi-2024.vercel.app/",
+    ghLink: null,
+  },
+  {
+    name: "BarMates Homepage",
+    desc: "A landing page for our sports nutrition business.",
+    tech: ["Astro", "TailwindCSS & daisyUI", "Svelte"],
+    link: "https://barmates.ch",
+    ghLink: "https://github.com/nevthereal/barmates-landing",
+  },
+];
 ---
 
 <BaseLayout title='Work'>
@@ -14,21 +74,21 @@ const projects = await getCollection("work");
     <a href='https://links.nevillebrem.com' target='_blank'>linktree</a>.
   </p>
   <div
-    class='my-16 flex grid-cols-2 flex-col gap-8 xl:grid max-w-4xl md:mx-auto mx-2'
+    class='my-16 flex grid-cols-2 flex-col gap-8 xl:grid max-w-4xl md:mx-auto mx-8'
   >
     {
       projects.map((project) => {
         return (
           <div class='bg-base-200 rounded-box flex flex-col justify-between p-8 text-left border-2 border-base-300'>
             <div>
-              <h1 class='font-bold text-3xl'>{project.data.name}</h1>
+              <h1 class='font-bold text-3xl'>{project.name}</h1>
               <hr class='my-4 border-t-2 border-base-300' />
               <p class='font-bold text-xl'>Description</p>
-              <p>{project.data.desc}</p>
+              <p>{project.desc}</p>
               <hr class='my-4 border-t-2 border-base-300' />
               <p class='font-bold text-xl'>Technologies</p>
               <ul class='disc-list'>
-                {project.data.tech.map((tech) => {
+                {project.tech.map((tech) => {
                   return <li>{tech}</li>;
                 })}
               </ul>
@@ -37,7 +97,7 @@ const projects = await getCollection("work");
             <div>
               <div class='flex gap-2'>
                 <a
-                  href={project.data.link}
+                  href={project.link}
                   target='_blank'
                   aria-label='Project Link'
                 >
@@ -45,15 +105,11 @@ const projects = await getCollection("work");
                     <i class='fa-solid fa-globe text-2xl' />
                   </button>
                 </a>
-                {project.data.ghLink != null && (
-                  <a
-                    href={project.data.ghLink}
-                    target='_blank'
-                    aria-label='GitHub'
-                  >
+                {project.ghLink != null && (
+                  <a href={project.ghLink} target='_blank' aria-label='GitHub'>
                     <button
                       class='btn btn-square duration-200 ease-in-out hover:text-purple-500 btn-ghost'
-                      disabled={!project.data.ghLink === undefined}
+                      disabled={!project.ghLink === undefined}
                     >
                       <i class='fa-brands fa-github text-2xl' />
                     </button>
