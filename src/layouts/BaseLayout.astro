@@ -1,6 +1,6 @@
 ---
 import Footer from "@components/Footer.astro";
-import { Nav } from "@components/Nav";
+import Nav from "@components/Nav.astro";
 interface Props {
   title: string;
 }
@@ -30,7 +30,7 @@ const { title } = Astro.props;
     <meta name='twitter:site' content='@BremNeville' />
     <style is:global>
       .bento-box {
-        @apply p-8 text-center duration-200 hover:shadow-lg rounded-box bg-base-200;
+        @apply p-8 text-center duration-200 hover:shadow-lg shadow-sm rounded-box bg-base-200 border-2 border-base-300;
       }
 
       .bento-heading {
@@ -47,7 +47,7 @@ const { title } = Astro.props;
     </style>
   </head>
   <body>
-    <Nav client:load />
+    <Nav />
     <main class='overflow-x-hidden'>
       <slot />
     </main>

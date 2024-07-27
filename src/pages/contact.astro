@@ -1,9 +1,34 @@
 ---
 import Heading from "@components/Heading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
 
-const socials = await getCollection("socials");
+interface Social {
+  link: string;
+  title: string;
+  body: string;
+  icon: string;
+}
+
+const socials: Social[] = [
+  {
+    link: "https://youtube.com/@nevillebrem",
+    title: "YouTube",
+    body: "See code breakdowns and other videos around coding here",
+    icon: "fa-brands fa-youtube",
+  },
+  {
+    link: "https://www.fiverr.com/nevthereal",
+    title: "Fiverr",
+    body: "Contact me for freelance work",
+    icon: "fa-solid fa-handshake",
+  },
+  {
+    link: "https://x.com/BremNeville",
+    title: "Twitter",
+    body: "I'm on x, btw",
+    icon: "fa-brands fa-x-twitter",
+  },
+];
 ---
 
 <BaseLayout title='Contact'>
@@ -16,15 +41,15 @@ const socials = await getCollection("socials");
         socials.map((social) => {
           return (
             <a
-              href={social.data.link}
+              href={social.link}
               target='_blank'
-              class='bg-base-200 rounded-box flex items-center gap-6 p-4'
+              class='bg-base-200 rounded-box flex items-center gap-6 px-6 py-4 border-2 border-base-300 group'
               id='card'
             >
-              <i class={`${social.data.icon} text-2xl`} />
+              <i class={`${social.icon} text-2xl`} />
               <div class='my-auto'>
-                <h3 class='text-3xl font-bold'>{social.data.title}</h3>
-                <p class='hidden md:block font-medium'>{social.data.body}</p>
+                <h3 class='text-3xl font-bold'>{social.title}</h3>
+                <p class='hidden md:block font-medium'>{social.body}</p>
               </div>
             </a>
           );

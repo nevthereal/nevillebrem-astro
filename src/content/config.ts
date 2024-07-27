@@ -11,17 +11,6 @@ const work = defineCollection({
   }),
 });
 
-const socials = defineCollection({
-  type: "data",
-  schema: z.object({
-    link: z.string().url(),
-    title: z.string(),
-    body: z.string(),
-    icon: z.string(),
-  }),
-});
-
 export const collections = {
   work,
-  socials,
 };
