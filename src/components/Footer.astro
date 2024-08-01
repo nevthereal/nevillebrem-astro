@@ -1,54 +1,75 @@
+---
+interface Link {
+  name: string;
+  link: string;
+}
+
+const usefulLinks: Link[] = [
+  {
+    link: "https://photography.nevillebrem.com",
+    name: "Photography",
+  },
+  {
+    link: "https://codoodle.nevillebrem.com",
+    name: "Codoodle",
+  },
+  {
+    link: "https://react.nevillebrem.com",
+    name: "Old page",
+  },
+  {
+    link: "https://codoodle.nevillebrem.com",
+    name: "Linktree",
+  },
+];
+
+const supportLinks: Link[] = [
+  {
+    link: "https://youtube.com/@nevillebrem",
+    name: "YouTube",
+  },
+  {
+    link: "https://github.com/sponsors/nevthereal",
+    name: "GitHub Sponsors",
+  },
+  {
+    link: "https://nevillebrem.gumroad.com",
+    name: "Gumroad",
+  },
+];
+---
+
 <footer
-  class='mx-auto p-8 text-center max-w-xl flex flex-col md:flex-row-reverse gap-4 justify-between'
+  class='mx-auto p-8 text-center max-w-xl flex flex-col md:flex-row-reverse gap-4 items-center justify-between'
 >
   <div class='mt-4 grid grid-cols-2 justify-center text-left'>
     <ul>
       <li class='text-base-content/80 font-bold'>Useful links</li>
-      <li>
-        <a
-          class='font-medium'
-          target='_blank'
-          href='https://photography.nevillebrem.com'>Photography</a
-        >
-      </li>
-      <li>
-        <a
-          class='font-medium'
-          target='_blank'
-          href='https://codoodle.nevillebrem.com'>Codoodle</a
-        >
-      </li>
-      <li>
-        <a
-          class='font-medium'
-          target='_blank'
-          href='https://links.nevillebrem.com'>All links</a
-        >
-      </li>
+      {
+        usefulLinks.map(({ link, name }) => {
+          return (
+            <li>
+              <a class='font-medium' target='_blank' href={link}>
+                {name}
+              </a>
+            </li>
+          );
+        })
+      }
     </ul>
     <ul>
       <li class='text-base-content/80 font-bold'>Support me</li>
-      <li>
-        <a
-          class='font-medium'
-          target='_blank'
-          href='https://youtube.com/@nevillebrem'>YouTube</a
-        >
-      </li>
-      <li>
-        <a
-          class='font-medium'
-          target='_blank'
-          href='https://github.com/sponsors/nevthereal'>GitHub Sponsoring</a
-        >
-      </li>
-      <li>
-        <a
-          class='font-medium'
-          target='_blank'
-          href='https://nevillebrem.gumroad.com'>Gumroad Assets</a
-        >
-      </li>
+      {
+        supportLinks.map(({ name, link }) => {
+          return (
+            <li>
+              <a class='font-medium' target='_blank' href={link}>
+                {name}
+              </a>
+            </li>
+          );
+        })
+      }
     </ul>
   </div>
   <div>
