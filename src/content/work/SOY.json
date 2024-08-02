@@ -1,7 +1,0 @@
-{
-  "name": "Lapland Course Event Page",
-  "desc": "Landing page for an event of the finnish Association of Spinal Surgeons.",
-  "tech": ["Astro", "TailwindCSS", "React"],
-  "link": "https://lapin-kurssi-2024.vercel.app/",
-  "ghLink": null
-}

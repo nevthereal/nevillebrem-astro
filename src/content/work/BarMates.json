@@ -1,7 +1,0 @@
-{
-  "name": "BarMates Homepage",
-  "desc": "A landing page for our sports nutrition business.",
-  "tech": ["Astro", "TailwindCSS & daisyUI", "Svelte"],
-  "link": "https://barmates.ch",
-  "ghLink": "https://github.com/nevthereal/barmates-landing"
-}
