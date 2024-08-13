@@ -3,22 +3,26 @@ import me from "@assets/me.jpg";
 import { Image } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Heading from "@components/Heading.astro";
+import HoverSpan from "@components/HoverSpan.astro";
 ---
 
 <BaseLayout title='Home'>
   <section class='w-screen h-screen flex justify-center items-center'>
     <div class='flex flex-col gap-4'>
       <h1 class='text-center text-7xl font-black md:text-8xl'>Neville Brem</h1>
-      <h3 class='mx-auto font-semibold italic text-xl md:text-2xl'>
-        Bringing{" "}
+      <h3 class='mx-auto font-semibold italic text-xl md:text-2xl group'>
+        Bringing
         <span
-          class='font-extrabold text-primary duration-200 ease-in-out hover:tracking-widest hover:text-green-500'
+          class='font-extrabold text-primary duration-200 ease-in-out group-hover:tracking-widest group-hover:text-green-500'
         >
           life
-        </span>{" "}
+        </span>
         to every page
       </h3>
-      <a href='#about' class='btn btn-primary mx-auto text-white font-bold'>
+      <a
+        href='#about'
+        class='btn btn-primary mx-auto text-white font-bold btn-outline'
+      >
         Explore
       </a>
     </div>
@@ -30,13 +34,21 @@ import Heading from "@components/Heading.astro";
     >
       <div class='m-auto'>
         <h1 class='text-xl md:text-3xl font-black'>About me</h1>
-        <p class='mt-2 text-balance'>
-          Hey there, my name is Neville Brem and I am a Web Developer from
-          Zurich, Switzerland. I love coding, computer science and everything to
-          do with tech. I am 16 years old in a High School in Zurich. I began my
-          coding journey in 2021. Since then I've been fascinated with web
-          development and learned many technologies around it. I have passions
-          for all things digital including photography, editing and AI.
+        <p class='mt-2 text-balance group'>
+          Hey there, my name is <HoverSpan>Neville Brem</HoverSpan> and I am a Web
+          Developer from <HoverSpan>Switzerland</HoverSpan>. I love <HoverSpan
+            >coding</HoverSpan
+          >,
+          <HoverSpan>computer science</HoverSpan> and everything to do with <HoverSpan
+            >tech</HoverSpan
+          >. I am <HoverSpan>16 years old</HoverSpan> in a High School in Zurich.
+          I began my coding journey in <HoverSpan>2021</HoverSpan>. Since then
+          I've been <HoverSpan>fascinated with web development</HoverSpan> and learned
+          many technologies around it. I have passions for <HoverSpan
+            >all things digital</HoverSpan
+          > including <HoverSpan>photography</HoverSpan>, <HoverSpan
+            >creation</HoverSpan
+          > and <HoverSpan>AI</HoverSpan>.
         </p>
       </div>
       <Image
@@ -75,7 +87,7 @@ import Heading from "@components/Heading.astro";
         </a>
       </p>
     </div>
-    <div class='bento-box col-span-2 flex flex-col'>
+    <div class='bento-box col-span-2 flex flex-col group'>
       <div class='m-auto'>
         <h1
           class='bento-heading bg-gradient-to-bl from-primary to-secondary bg-clip-text text-4xl text-transparent md:text-6xl'
@@ -85,10 +97,26 @@ import Heading from "@components/Heading.astro";
         <ul
           class='list-inside list-decimal text-lg font-semibold md:text-xl text-left'
         >
-          <li>Beautifully crafted Websites</li>
-          <li>Modern Design</li>
-          <li>Keen eye on detail</li>
-          <li>Fast response times</li>
+          <li>
+            <span class='group-hover:font-black duration-200 ease-in-out'
+              >Beautifully</span
+            > crafted Websites
+          </li>
+          <li>
+            <span class='group-hover:font-black duration-200 ease-in-out'
+              >Modern</span
+            > Design
+          </li>
+          <li>
+            <span class='group-hover:font-black duration-200 ease-in-out'
+              >Keen eye</span
+            > on detail
+          </li>
+          <li>
+            <span class='group-hover:font-black duration-200 ease-in-out'
+              >Fast</span
+            > response times
+          </li>
         </ul>
       </div>
     </div>
@@ -96,22 +124,55 @@ import Heading from "@components/Heading.astro";
       <h1 class='bento-heading text-4xl md:text-6xl text-white'>Stack:</h1>
       <ul class='font-bold text-2xl text-white'>
         <li>
-          <a href='https://kit.svelte.dev' target='_blank'> SvelteKit </a>
+          <a
+            href='https://kit.svelte.dev'
+            target='_blank'
+            class='hover:text-orange-500 duration-200 ease-in-out'
+          >
+            SvelteKit
+          </a>
         </li>
         <li>
-          <a href='https://astro.build' target='_blank'> Astro </a>
+          <a
+            href='https://astro.build'
+            target='_blank'
+            class='hover:text-pink-500 duration-200 ease-in-out'
+          >
+            Astro
+          </a>
         </li>
         <li>
-          <a href='https://tailwindcss.com' target='_blank'> Tailwind </a>
+          <a
+            href='https://tailwindcss.com'
+            class='hover:text-sky-400 duration-200 ease-in-out'
+            target='_blank'
+          >
+            Tailwind
+          </a>
         </li>
         <li>
-          <a href='https://orm.drizzle.team' target='_blank'> Drizzle </a>
+          <a
+            href='https://orm.drizzle.team'
+            class='hover:text-lime-500 duration-200 ease-in-out'
+            target='_blank'
+          >
+            Drizzle
+          </a>
         </li>
         <li>
-          <a href='https://neon.tech' target='_blank'> Neon </a>
+          <a
+            href='https://neon.tech'
+            class='hover:text-cyan-500 duration-200 ease-in-out'
+            target='_blank'
+          >
+            Neon
+          </a>
         </li>
         <li>
-          <a href='https://lucia-auth.com'>Lucia</a>
+          <a
+            href='https://lucia-auth.com'
+            class='hover:text-purple-500 duration-200 ease-in-out'>Lucia</a
+          >
         </li>
       </ul>
     </div>
@@ -128,26 +189,16 @@ import Heading from "@components/Heading.astro";
           </p>
         </div>
       </div>
-      <div class='bento-box flex items-center justify-center'>
+      <div class='bento-box flex items-center justify-center group'>
         <div>
           <h1
-            class='bento-heading bg-gradient-to-bl from-primary to-secondary bg-clip-text text-4xl text-transparent duration-200 ease-in-out hover:tracking-widest'
+            class='bento-heading bg-gradient-to-bl from-primary to-secondary bg-clip-text text-4xl text-transparent duration-200 ease-in-out group-hover:tracking-widest'
           >
             Interactivity
           </h1>
           <p>
-            Creates a feeling of{" "}
-            <span class='group font-bold'>
-              connection{" "}
-              <a
-                href='https://github.com/nevthereal/nevillebrem-astro'
-                target='_blank'
-                class='hidden group-hover:inline'
-              >
-                <i class='fa-solid fa-link'></i>
-              </a>
-            </span>{" "}
-            to the site.
+            Creates a feeling of <span class='font-bold'>connection</span> to the
+            site.
           </p>
         </div>
       </div>
