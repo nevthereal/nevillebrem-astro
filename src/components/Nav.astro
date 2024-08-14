@@ -30,18 +30,13 @@ const links: Item[] = [
 ---
 
 <ul
-  class='menu max-md:menu-horizontal md:-translate-y-1/2 md:left-6 max-md:menu-xs bg-base-200 border-base-300 border-2 rounded-box fixed md:top-1/2 max-md:bottom-6 max-md:left-1/2 max-md:-translate-x-1/2 transform z-10'
+  class='flex md:flex-col p-2 md:-translate-y-1/2 md:left-6 max-md:menu-xs bg-base-200 border-base-300 border-2 rounded-box fixed md:top-1/2 max-md:bottom-6 max-md:left-1/2 max-md:-translate-x-1/2 transform z-10'
 >
   {
     links.map(({ title, link, icon }) => {
       return (
         <li>
-          <a
-            aria-label={title}
-            href={link}
-            class='tooltip tooltip-right aspect-square flex justify-center items-center'
-            data-tip={title}
-          >
+          <a aria-label={title} href={link} class='btn btn-square'>
             <i class={`${icon} text-xl`} />
           </a>
         </li>
