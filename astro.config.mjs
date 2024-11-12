@@ -9,9 +9,5 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   integrations: [tailwind(), react(), svelte()],
   output: "static",
-  adapter: vercel({
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
+  adapter: vercel(),
 });
