@@ -66,52 +66,52 @@ const projects: Project[] = [
 ];
 ---
 
-<BaseLayout title='Work'>
-  <Heading title='Projects' subtitle="Things I've worked on" />
-  <p class='text-center prose-a:link'>
+<BaseLayout title="Work">
+  <Heading title="Projects" subtitle="Things I've worked on" />
+  <p class="text-center prose-a:link">
     This page only features some of my projects, but you can find all of them on
-    <a href='https://github.com/nevthereal' target='_blank'>GitHub</a> or on my
-    <a href='https://links.nevillebrem.com' target='_blank'>linktree</a>.
+    <a href="https://github.com/nevthereal" target="_blank">GitHub</a> or on my
+    <a href="https://links.nevillebrem.com" target="_blank">linktree</a>.
   </p>
   <div
-    class='my-16 flex grid-cols-2 flex-col gap-8 xl:grid max-w-4xl md:mx-auto mx-8'
+    class="my-16 flex grid-cols-2 flex-col gap-8 xl:grid max-w-4xl md:mx-auto mx-8"
   >
     {
       projects.map((project) => {
         return (
-          <div class='bg-base-200 rounded-box flex flex-col justify-between p-8 text-left border-2 border-base-300'>
+          <div class="bg-base-200 rounded-box flex flex-col justify-between p-8 text-left border-2 border-base-300">
             <div>
-              <h1 class='font-bold text-3xl'>{project.name}</h1>
-              <hr class='my-4 border-t-2 border-base-300' />
-              <p class='font-bold text-xl'>Description</p>
+              <h1 class="font-bold text-3xl">{project.name}</h1>
+              <hr class="my-4 border-t-2 border-base-300" />
+              <p class="font-bold text-xl">Description</p>
               <p>{project.desc}</p>
-              <hr class='my-4 border-t-2 border-base-300' />
-              <p class='font-bold text-xl'>Technologies</p>
-              <ul class='disc-list'>
+              <hr class="my-4 border-t-2 border-base-300" />
+              <p class="font-bold text-xl">Technologies</p>
+              <ul class="disc-list">
                 {project.tech.map((tech) => {
                   return <li>{tech}</li>;
                 })}
               </ul>
-              <hr class='my-4 border-t-2 border-base-300' />
+              <hr class="my-4 border-t-2 border-base-300" />
             </div>
             <div>
-              <div class='flex gap-2'>
+              <div class="flex gap-2">
                 <a
                   href={project.link}
-                  target='_blank'
-                  aria-label='Project Link'
+                  target="_blank"
+                  aria-label="Project Link"
                 >
-                  <button class='btn btn-square btn-ghost duration-200 ease-in-out hover:text-primary'>
-                    <i class='fa-solid fa-globe text-2xl' />
+                  <button class="btn btn-square btn-ghost duration-200 ease-in-out hover:text-primary">
+                    <i class="fa-solid fa-globe text-2xl" />
                   </button>
                 </a>
                 {project.ghLink != null && (
-                  <a href={project.ghLink} target='_blank' aria-label='GitHub'>
+                  <a href={project.ghLink} target="_blank" aria-label="GitHub">
                     <button
-                      class='btn btn-square duration-200 ease-in-out hover:text-purple-500 btn-ghost'
+                      class="btn btn-square duration-200 ease-in-out hover:text-purple-500 btn-ghost"
                       disabled={!project.ghLink === undefined}
                     >
-                      <i class='fa-brands fa-github text-2xl' />
+                      <i class="fa-brands fa-github text-2xl" />
                     </button>
                   </a>
                 )}
