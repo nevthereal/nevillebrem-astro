@@ -1,9 +1,16 @@
 ---
 import Heading from "@components/Heading.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const blogPosts = await getCollection("blog");
 ---
 
 <BaseLayout title="Blog">
   <Heading title="Blog" subtitle="See what I am up to" />
-  <p class="text-warning text-3xl font-medium text-center">Coming soon</p>
+  {
+    blogPosts.map(({ data, id }) => {
+      return <a href={`blog/${id.replace(".md", "")}`}>Hihihaw</a>;
+    })
+  }
 </BaseLayout>

@@ -17,14 +17,13 @@ const isProd = import.meta.env.PROD;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <script
-      defer
-      src="https://analytics.nevillebrem.com/script.js"
-      data-website-id="a1a90ec1-8071-45a2-a85b-90339058ddd9"></script>
+      src="https://kit.fontawesome.com/0c1fb969e1.js"
+      crossorigin="anonymous"></script>
     {
       isProd && (
         <script
-          src="https://kit.fontawesome.com/0c1fb969e1.js"
-          crossorigin="anonymous"
+          src="https://analytics.nevillebrem.com/script.js"
+          data-website-id="a1a90ec1-8071-45a2-a85b-90339058ddd9"
         />
       )
     }
