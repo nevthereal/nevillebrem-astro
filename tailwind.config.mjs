@@ -8,6 +8,8 @@ export default {
     require("@tailwindcss/typography"),
     require("daisyui"),
     require("@tailwindcss/forms"),
+    require("tailwindcss-motion"),
+    require("tailwindcss-intersect"),
   ],
   daisyui: {
     themes: [
