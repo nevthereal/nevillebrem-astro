@@ -1,19 +1,23 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import About from "@components/sections/About.astro";
-import Bento from "@components/sections/Bento.astro";
-import Timeline from "@components/sections/Timeline.astro";
+
+import me from "@assets/me.jpg";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout title="Home">
-  <section class="w-screen h-screen flex justify-center items-center">
-    <div class="flex flex-col gap-4">
+  <section
+    class="flex max-md:flex-col max-md:mx-8 justify-center mt-8 md:mt-32 gap-16"
+  >
+    <div id="about" class="max-w-5xl my-auto">
       <h1
         class="text-center text-7xl font-black md:text-8xl motion-preset-blur-up"
       >
         Neville Brem
       </h1>
-      <h3 class="mx-auto font-semibold italic text-xl md:text-2xl group">
+      <h3
+        class="max-md:text-center mt-2 mx-auto font-semibold italic text-xl md:text-2xl group"
+      >
         Bringing
         <span
           class="font-extrabold text-primary duration-200 ease-in-out group-hover:tracking-widest group-hover:text-green-500"
@@ -22,16 +26,34 @@ import Timeline from "@components/sections/Timeline.astro";
         </span>
         to every page
       </h3>
-      <a
-        href="#about"
-        class="btn btn-primary mx-auto text-white font-bold btn-outline motion-preset-pop motion-duration-300"
-      >
-        Explore
-      </a>
+      <div>
+        <p class="mt-8 text-balance max-w-lg prose">
+          My name is Neville Brem and I am a Web Developer from Switzerland. I
+          love coding, computer science and everything to do with tech. I am 17
+          years old and attending a mathematical and scientific high school. I
+          began my coding journey in 2021. Since then I've been fascinated with
+          web development and learned many technologies around it. I have
+          passions for all things digital including photography, creation and
+          AI. In 2024, I started my <a href="https://youtube.com/@nevillebrem"
+            >YouTube channel</a
+          >. Currently I gain expertise around <a href="https://svelte.dev"
+            >SvelteKit</a
+          >, <a href="https://orm.drizzle.team">Drizzle ORM</a>, <a
+            href="https://tailwindcss.com">Tailwind</a
+          > and <a href="https://astro.build">Astro</a>. You can take a look at
+          my work <a class="link-primary" href="/work">here</a>. Feel free to <a
+            class="link-primary"
+            href="/contact">connect</a
+          >.
+        </p>
+      </div>
     </div>
+    <Image
+      src={me}
+      alt="me:)"
+      quality="mid"
+      loading="lazy"
+      class="max-w-sm border-2 border-base-300 w-auto rounded-box duration-200 hover:shadow-lg shadow-sm motion-preset-blur-up motion-delay-200"
+    />
   </section>
-
-  <About />
-  <Bento />
-  <Timeline />
 </BaseLayout>
