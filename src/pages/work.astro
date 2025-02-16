@@ -14,7 +14,7 @@ interface Project {
 const projects: Project[] = [
   {
     name: "Zenith",
-    desc: "An App that converts natural language input into usable events or tasks. I intended to work against using complex UIs.",
+    desc: "An App that converts natural language input into usable events or tasks. I intended to work against using complex UIs. The app includes some usage of the Vercel AI SDK.",
     tech: [
       "SvelteKit",
       "TailwindCSS & daisyUI",
@@ -30,7 +30,7 @@ const projects: Project[] = [
   },
   {
     name: "KM-Challenge",
-    desc: "An app I built for my rowing club. You can track your kilometres and compete inside of clubs.",
+    desc: "An app I built for my rowing club. You can track your kilometres and compete inside of clubs. Probably one of my most advanced projects.",
     tech: [
       "SvelteKit",
       "TailwindCSS",
@@ -40,6 +40,13 @@ const projects: Project[] = [
     ],
     ghLink: "https://github.com/nevthereal/km-challenge",
     link: "https://km-challenge.com",
+  },
+  {
+    name: "AOS Event Page",
+    desc: "Landing page for the Arctic Orthopedic Summit (AOS). My first real project.",
+    tech: ["Astro", "TailwindCSS", "React"],
+    link: "https://arcticorthopedics.fi",
+    ghLink: null,
   },
   {
     name: "Codoodle",
@@ -56,25 +63,18 @@ const projects: Project[] = [
     ghLink: "https://github.com/nevthereal/codoodle",
   },
   {
+    name: "BarMates Homepage",
+    desc: "A landing page for our sports nutrition business. It's discontinued, but I still want to share the page because I am proud of it.",
+    tech: ["Astro", "TailwindCSS & daisyUI", "Svelte"],
+    link: "https://barmates.vercel.app",
+    ghLink: "https://github.com/nevthereal/barmates-landing",
+  },
+  {
     name: "Wolffe Bricks",
     desc: "An ecommerce app I built for me and a friend to sell PDF toy instructions.",
     tech: ["SvelteKit", "Skeleton UI", "TailwindCSS", "Stripe"],
     link: "https://wolffebricks.rocks",
     ghLink: "https://github.com/nevthereal/wolffebricks-svelte",
-  },
-  {
-    name: "Lapland Course Event Page",
-    desc: "Landing page for an event of the finnish Association of Spinal Surgeons.",
-    tech: ["Astro", "TailwindCSS", "React"],
-    link: "https://arcticorthopedics.fi",
-    ghLink: null,
-  },
-  {
-    name: "BarMates Homepage",
-    desc: "A landing page for our sports nutrition business. It's discontinued, but I still want to share it because I am proud of it.",
-    tech: ["Astro", "TailwindCSS & daisyUI", "Svelte"],
-    link: "https://barmates.ch",
-    ghLink: "https://github.com/nevthereal/barmates-landing",
   },
 ];
 ---
