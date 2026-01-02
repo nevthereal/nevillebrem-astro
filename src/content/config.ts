@@ -10,4 +10,6 @@ const blog = defineCollection({
   }),
 });
 
+// src/content.config.ts
+
 export const collections = { blog };
