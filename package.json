@@ -18,7 +18,7 @@
     "@richardnbanks/astro-loader-youtube": "^0.0.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "astro": "5.16.6",
+    "astro": "6.1.10",
     "framer-motion": "^11.3.2",
     "lucide-react": "^0.408.0",
     "react": "^18.3.1",
